@@ -1,11 +1,9 @@
 <html>
-  <head>
-    <link
-      rel="stylesheet"
-      href="//angrybirds.beta.vidizmo.com/static/compiled/widget/widget.css"
-    />
-    <script type="text/javascript">
-      /** Load widget context in window object */ var widgetContext = {};
+
+<head>
+	<link rel="stylesheet" href="//angrybirds.beta.vidizmo.com/static/compiled/widget/widget.css" />
+	<script type="text/javascript">
+		/** Load widget context in window object */ var widgetContext = {};
       widgetContext.tenantUrl = "//angrybirds.beta.vidizmo.com/";
       widgetContext.apiKey =
         "EMXLDCVMPFWD2R6OR5HEU73AUJ5VWNQE5UN57HJXZIXYK4RAMLR6XABIOICUT4K3EG344LOFH4XRWHKIJYT3OUBH33YSAURLFVKMC4UQ64A2NMXF4RKQVJEHU5GDLWZAWIR4F7VN5NWUS7CHZU6NYSQKNFX5CW7VGSUWA46P3KSTVITFUDZDIVHUOMESJ7COLT3RCSU47P6ZI";
@@ -14,22 +12,67 @@
       window["getChunkURL"] = function() {
         "//angrybirds.beta.vidizmo.com/static/compiled/widget/";
       };
-    </script>
-  </head>
-  <body>
-    <div class="vidizmo-container">
-      <div class="md-skin skin">
-        <vdz-mashup-mostpopular-carousel
-          heading="Most Viewed Mashup Slider"
-          record-count="18"
-        >
-        </vdz-mashup-mostpopular-carousel>
-      </div>
-    </div>
+	</script>
+</head>
 
-    <script
-      src="//angrybirds.beta.vidizmo.com/static/compiled/widget/widget.js"
-      defer
-    ></script>
-  </body>
+<body>
+	<div class="vidizmo-container">
+		<div class="md-skin skin">
+			<vdz-mashup-mostpopular-carousel heading="Most Viewed Mashup Slider"></vdz-mashup-mostpopular-carousel>
+			<vdz-mashup-mostrecent-carousel heading="Most Viewed Mashup Slider"></vdz-mashup-mostrecent-carousel>
+			<vdz-mashup-mostviewed-carousel heading="Most Viewed Mashup Slider"></vdz-mashup-mostviewed-carousel>
+
+			<vdz-mashup-mostpopular-collage></vdz-mashup-mostpopular-collage>
+			<vdz-mashup-mostrecent-collage></vdz-mashup-mostrecent-collage>
+			<vdz-mashup-mostviewed-collage></vdz-mashup-mostviewed-collage>
+			<vdz-mashup-collage
+				search-criteria='{"sortType":"DESC","pageIndex":0,"pageSize":36,"mashupSearchParts":["BasicInfo","Participation","Stats","UserStats","Tracking"],"isGlobal":true,"showOnChannelLibrary":true,"isFeatured":true,"orderBy":"Weight"}'
+				pagination-behaviour="concatenate"> </vdz-mashup-collage>
+
+			<vdz-mashup-mostpopular-gallery sort-by="Title"></vdz-mashup-mostpopular-gallery>
+			<vdz-mashup-mostrecent-gallery sort-by="Title"></vdz-mashup-mostrecent-gallery>
+			<vdz-mashup-mostviewed-gallery sort-by="Title"></vdz-mashup-mostviewed-gallery>
+
+			<vdz-mashup-mostpopular-detailview sort-by="Title">
+				</vdz-mashup-mostviewed-detailview>
+				<vdz-mashup-mostrecent-detailview sort-by="Title">
+					</vdz-mashup-mostviewed-detailview>
+					<vdz-mashup-mostviewed-detailview sort-by="Title"></vdz-mashup-mostviewed-detailview>
+		</div>
+	</div>
+
+	<script src="//angrybirds.beta.vidizmo.com/static/compiled/widget/widget.js" defer></script>
+	<script>
+		var doc = document.getElementsByTagName("body")[0]
+    doc.addEventListener("onVidizmoError", function(event){
+        console.log("🚀 ~ file: widget-index.html ~ line 87 ~ doc.addEventListener ~ error", event)
+    })
+    var doc2 = document.getElementsByTagName("vdz-mashup-mostpopular-collage")[0]
+    doc2.addEventListener("vdz-on-link-clicked", function(event){
+        console.log("vdz-on-link-clicked", event)
+    })
+    doc2.addEventListener("vdz-on-page-changed", function(event){
+        console.log("vdz-on-page-changed", event)
+    })
+    doc2.addEventListener("vdz-on-mashups-loaded", function(event){
+        console.log("vdz-on-mashups-loaded", event)
+    })
+    doc2.addEventListener("vdz-on-mashup-search-call-started", function(event){
+        console.log("vdz-on-mashup-search-call-started", event)
+    })
+    doc2.addEventListener("vdz-on-mashup-search-call-ended", function(event){
+        console.log("vdz-on-mashup-search-call-ended", event)
+    })
+    doc2.addEventListener("vdz-on-mashup-search-call-failed", function(event){
+        console.log("vdz-on-mashup-search-call-failed", event)
+    })
+    doc2.addEventListener("vdz-on-slide-changed", function(event){
+        console.log("vdz-on-slide-changed", event)
+    })
+    doc2.addEventListener("vdz-on-mashups-requested", function(event){
+        console.log("vdz-on-mashups-requested", event)
+    })
+	</script>
+</body>
+
 </html>
